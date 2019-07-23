@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>FORM</title>
+        <script>
+            function NameValidate()
+            {
+                var x=document.e1.name.value;
+                var a=/^[a-zA-Z]{5,10}/;
+                if(x.match(a))
+                document.getElementById('n').innerHTML="valid";
+                else
+                document.getElementById('n').innerHTML="invalid";
+               
+            }
+            function UNameValidate()
+            {
+                var x=document.e1.uname.value;
+                var a=/^[a-zA-Z]/;
+                if(x.match(a))
+                document.getElementById('un').innerHTML="valid";
+                else
+                document.getElementById('un').innerHTML="invalid";
+               
+            }
+            function PassValidate()
+            {
+                var x=document.e1.pwd1.value;
+                var a=/^[a-zA-Z0-9@#$%^&*]{8,15}/;
+                if(x.match(a))
+                document.getElementById('pv').innerHTML="valid";
+                else
+                document.getElementById('pv').innerHTML="invalid";
+               
+            }
+            function CPassValidate()
+            {
+                var x=document.e1.pwd1.value;
+                var b=document.e1.pwd2.value;
+                if(x==b)
+                document.getElementById('cp').innerHTML="valid";
+                else
+                document.getElementById('cp').innerHTML="Invalid";
+            }
+            function EmailValidate()
+            {
+                var x=document.e1.email.value;
+                var at=x.indexOf("@");
+                var dot=x.lastIndexOf(".");
+                if(at<1 || dot<at+2 || dot+2>=x.length)
+                document.getElementById('ev').innerHTML="Invalid";
+                else
+                document.getElementById('ev').innerHTML="valid";
+             }
+
+              function NumValidate()
+            {
+                var x=document.e1.number.value;
+                var a=/^[0-9]{10,10}/;
+                if(x.match(a))
+                document.getElementById('num').innerHTML="valid";
+                else
+                document.getElementById('num').innerHTML="invalid";
+               
+            }
+           
+        </script>
+    </head>
+    <body bgcolor="lavender">
+        <center><H3>Register</H3>
+     
+        <p>Please fill in this form to create an account</p>
+        
+            <form action="Login.html" name="e1" onsubmit="NameValidate">
+                    <table border="0">
+                <tr><td>UserName</td><td><input type="text" name="uname" placeholder="Enter username" required onkeyup="UNameValidate()"></td>
+                <td><p id="un"></p></td></tr>
+                <tr><td>Name</td><td><input type="text" name="name" placeholder="Enter name" required onkeyup="NameValidate()"></td>
+                <td><p id="n"></p></td></tr>
+                <tr><td>Email</td><td><input type="text" name="email" placeholder="Enter Email" required onkeyup="EmailValidate()"></td>
+                <td><p id="ev"></p></td></tr>
+                <tr><td>Password</td><td><input type="password" name="pwd1" placeholder="Enter Password"required onkeyup="PassValidate()"></td>
+                <td ><p id="pv"></p></td></tr>
+                <tr><td>Repeat Password</td><td><input type="password" name="pwd2"placeholder="Repeat Password" required onkeyup="CPassValidate()"></td>
+                <td><p id="cp"></p></td></tr>
+                <tr><td>DOB</td><td><input type="date"placeholder="mm/dd/yyyy"></td></tr>
+                <tr><td>Gender</td><td><input type="radio"name="Gender" value="Male" checked >Male
+                <input type="radio"name="Gender" value="Femle"  >Female
+                <input type="radio"name="Gender" value="Other"  >Others</td></tr>
+                <tr><td>Language Known</td><td>
+                English<input type="checkbox"name="Language Known" value="English">
+                Tamil<input type="checkbox"name="Language Known" value="Tamil"  >
+                Hindi<input type="checkbox"name="Language Known" value="Hindi"  >
+                Malyalam<input type="checkbox"name="Language Known" value="Malyalam" ></td></tr>
+                <tr><td>Contact Number</td><td><input type="tel" name="number" placeholder="Enter number"required onkeyup="NumValidate()"></td>
+                <td><p id="num"></p></td></tr>
+                <tr><td>Upload</td><td><input type="file"></td></tr>
+                <tr><td>Favourite color</td><td><input type="color"></td></tr>
+                <tr><td>Qualification</td>
+                <td><select name="Degree"value="Degree" >
+                        <option value="BCA">BCA</option>
+                        <option value="BSC">BSC</option>
+                        <option value="BCOM">BCOM</option>
+                </select></td></tr>
+                <tr><td>Download file</td><td><a href=C:\Users\jeravich\Desktop\Variables\download.jfif>File</a></td></tr>
+                <tr><td><Justify><input type="submit" value="Submit"></Justify></td> 
+                <td><input type="submit" value="Register"></td>
+                <td><input type="submit" value="clear"></td></tr>
+            </table>
+
+            </form>
+        </center>
+        </body>
+        </html>
